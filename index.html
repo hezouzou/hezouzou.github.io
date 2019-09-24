@@ -76,9 +76,9 @@
 			
 				<li><a href="/" target="_blank">主页</a></li>
 	        
-				<li><a href="#" target="_blank">技术笔记</a></li>
+				<li><a href="https://zhousiwei.gitee.io/ibooks/" target="_blank">技术笔记</a></li>
 	        
-				<li><a href="#" target="_blank">随笔</a></li>
+				<li><a href="/tags/随笔/" target="_blank">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -186,6 +186,75 @@
           </div>
           <div id="js-content" class="content-ll">
             
+
+  
+    <article id="post-移除元素" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="27-移除元素"><a href="#27-移除元素" class="headerlink" title="27.移除元素"></a>27.移除元素</h2><p>给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。</p>
+<p>不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。</p>
+<p>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p>
+<p>示例 1:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [<span class="number">3</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>], val = <span class="number">3</span>,</span><br><span class="line">函数应该返回新的长度 <span class="number">2</span>, 并且 nums 中的前两个元素均为 <span class="number">2</span>。</span><br><span class="line">你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+
+<p>示例 2:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">0</span>,<span class="number">4</span>,<span class="number">2</span>], val = <span class="number">2</span>,</span><br><span class="line">函数应该返回新的长度 <span class="number">5</span>, 并且 nums 中的前五个元素为 <span class="number">0</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">4</span>。</span><br><span class="line">注意这五个元素可为任意顺序。</span><br><span class="line">你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+
+<p>说明:</p>
+<p>为什么返回数值是整数，但输出的答案是数组呢?</p>
+<p>请注意，输入数组是以“引用”方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。</p>
+<p>你可以想象内部操作如下:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// nums 是以“引用”方式传递的。也就是说，不对实参作任何拷贝</span></span><br><span class="line">int len = removeElement(nums, val);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在函数里修改输入数组对于调用者是可见的。</span></span><br><span class="line"><span class="comment">// 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。</span></span><br><span class="line"><span class="keyword">for</span> (int i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">    print(nums[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>来源：力扣（LeetCode）</p>
+<h4 id="JS代码"><a href="#JS代码" class="headerlink" title="JS代码"></a>JS代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> removeElement = <span class="function"><span class="keyword">function</span>(<span class="params">nums, val</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> curr=nums</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;curr.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(curr[i]==val)&#123;</span><br><span class="line">            curr.splice(i,<span class="number">1</span>)</span><br><span class="line">            i--</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> curr</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="个人疑问"><a href="#个人疑问" class="headerlink" title="个人疑问"></a>个人疑问</h3><p>这个代码在浏览器上调试是没有问题的 但是不知道为什么在LeetCode上报错</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2019/09/24/移除元素/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
 
   
     <article id="post-有效的括号" class="article article-type-post  article-index" itemscope itemprop="blogPost">
