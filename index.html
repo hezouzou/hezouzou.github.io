@@ -188,6 +188,68 @@
             
 
   
+    <article id="post-实现strStr()" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="28-实现strStr"><a href="#28-实现strStr" class="headerlink" title="28.实现strStr()"></a>28.实现strStr()</h2><p>实现 strStr() 函数。</p>
+<p>给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)。如果不存在，则返回  -1。</p>
+<p>示例 1:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: haystack = <span class="string">"hello"</span>, needle = <span class="string">"ll"</span></span><br><span class="line">输出: <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>示例 2:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: haystack = <span class="string">"aaaaa"</span>, needle = <span class="string">"bba"</span></span><br><span class="line">输出: <span class="number">-1</span></span><br></pre></td></tr></table></figure>
+
+<p>说明:</p>
+<p>当 needle 是空字符串时，我们应当返回什么值呢？这是一个在面试中很好的问题。</p>
+<p>对于本题而言，当 needle 是空字符串时我们应当返回 0 。这与C语言的 strstr() 以及 Java的 indexOf() 定义相符。</p>
+<p>来源：力扣（LeetCode）</p>
+<h4 id="JS代码"><a href="#JS代码" class="headerlink" title="JS代码"></a>JS代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> strStr = <span class="function"><span class="keyword">function</span>(<span class="params">haystack, needle</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(haystack.length&lt;needle.length) <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">    <span class="keyword">if</span>(haystack===needle) <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span>(needle.length==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;haystack.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(haystack[i]===needle[<span class="number">0</span>])&#123;</span><br><span class="line">            <span class="keyword">if</span>(haystack.substr(i,needle.length)===needle)&#123;</span><br><span class="line">                <span class="keyword">return</span> i</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2019/09/25/实现strStr()/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-移除元素" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -528,8 +590,7 @@
     
   <div class="article-entry" itemprop="articleBody">
     
-    <p>##1.两数之和</p>
-<p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。<br>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
+    <h2 id="1-两数之和"><a href="#1-两数之和" class="headerlink" title="1.两数之和"></a>1.两数之和</h2><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。<br>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
 <p>示例:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span></span><br><span class="line">因为 nums[<span class="number">0</span>] + nums[<span class="number">1</span>] = <span class="number">2</span> + <span class="number">7</span> = <span class="number">9</span></span><br><span class="line">所以返回 [<span class="number">0</span>, <span class="number">1</span>]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
